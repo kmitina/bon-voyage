@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F060460C286CEAB00077E732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F060460B286CEAB00077E732 /* AppDelegate.swift */; };
 		F060460E286CEAB00077E732 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F060460D286CEAB00077E732 /* SceneDelegate.swift */; };
-		F0604610286CEAB00077E732 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F060460F286CEAB00077E732 /* ViewController.swift */; };
+		F0604610286CEAB00077E732 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F060460F286CEAB00077E732 /* HomeVC.swift */; };
 		F0604613286CEAB00077E732 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0604611286CEAB00077E732 /* Main.storyboard */; };
 		F0604615286CEAB20077E732 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0604614286CEAB20077E732 /* Assets.xcassets */; };
 		F0604618286CEAB20077E732 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0604616286CEAB20077E732 /* LaunchScreen.storyboard */; };
@@ -25,7 +25,7 @@
 		F0604608286CEAB00077E732 /* bon-voyage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bon-voyage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F060460B286CEAB00077E732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F060460D286CEAB00077E732 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F060460F286CEAB00077E732 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F060460F286CEAB00077E732 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		F0604612286CEAB00077E732 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0604614286CEAB20077E732 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0604617286CEAB20077E732 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 				F060462C286DCAC00077E732 /* LoginRegister */,
 				F060460B286CEAB00077E732 /* AppDelegate.swift */,
 				F060460D286CEAB00077E732 /* SceneDelegate.swift */,
-				F060460F286CEAB00077E732 /* ViewController.swift */,
+				F060460F286CEAB00077E732 /* HomeVC.swift */,
 				F0604621286CEF570077E732 /* Custom Views */,
 				F060461F286CEF4B0077E732 /* DemoData.swift */,
 				F0604611286CEAB00077E732 /* Main.storyboard */,
@@ -175,7 +175,7 @@
 			files = (
 				F0604626286CEF8F0077E732 /* ShadowCardView.swift in Sources */,
 				F0604620286CEF4B0077E732 /* DemoData.swift in Sources */,
-				F0604610286CEAB00077E732 /* ViewController.swift in Sources */,
+				F0604610286CEAB00077E732 /* HomeVC.swift in Sources */,
 				F060460C286CEAB00077E732 /* AppDelegate.swift in Sources */,
 				F0604627286CEF8F0077E732 /* RoundedButton.swift in Sources */,
 				F060460E286CEAB00077E732 /* SceneDelegate.swift in Sources */,

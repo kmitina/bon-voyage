@@ -18,6 +18,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-beach-clear" id="DKY-36-EYJ" userLabel="background-beach-clear">
+                    <rect key="frame" x="-7" y="13" width="428" height="883"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
                 <view alpha="0.55000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YBp-3z-gEu" userLabel="shadow card" customClass="CardView" customModule="bon_voyage" customModuleProvider="target">
                     <rect key="frame" x="24" y="166" width="378" height="177.5"/>
                     <color key="backgroundColor" name="card_shadow"/>
@@ -90,15 +94,23 @@
                                             <real key="value" value="5"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="loginBTNClicked:" destination="-1" eventType="touchUpInside" id="MuM-71-CdD"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="kX5-Ug-2tn" secondAttribute="trailing" id="1hU-tg-ZSb"/>
+                                <constraint firstAttribute="trailing" secondItem="0O1-3L-ULF" secondAttribute="trailing" id="7nu-XC-7Er"/>
+                                <constraint firstAttribute="trailing" secondItem="0O1-3L-ULF" secondAttribute="trailing" id="BCY-iW-lDH"/>
                                 <constraint firstAttribute="trailing" secondItem="0O1-3L-ULF" secondAttribute="trailing" id="G2s-0A-H3H"/>
                                 <constraint firstAttribute="trailing" secondItem="ial-nt-ZhC" secondAttribute="trailing" id="H9r-A1-3Y5"/>
+                                <constraint firstAttribute="trailing" secondItem="0O1-3L-ULF" secondAttribute="trailing" id="JtU-pU-QDC"/>
                                 <constraint firstAttribute="trailing" secondItem="0O1-3L-ULF" secondAttribute="trailing" id="Mai-lK-QxG"/>
+                                <constraint firstAttribute="trailing" secondItem="0O1-3L-ULF" secondAttribute="trailing" id="OZ0-nd-vZP"/>
                                 <constraint firstItem="0O1-3L-ULF" firstAttribute="leading" secondItem="Thz-DS-wuU" secondAttribute="leading" id="TnL-CI-Wpe"/>
                                 <constraint firstItem="kX5-Ug-2tn" firstAttribute="leading" secondItem="Thz-DS-wuU" secondAttribute="leading" id="asJ-MF-hws"/>
+                                <constraint firstAttribute="trailing" secondItem="ial-nt-ZhC" secondAttribute="trailing" id="bXG-vP-wqe"/>
                                 <constraint firstAttribute="trailing" secondItem="0O1-3L-ULF" secondAttribute="trailing" id="et8-O7-xkN"/>
                                 <constraint firstAttribute="trailing" secondItem="ial-nt-ZhC" secondAttribute="trailing" id="fgH-sI-5py"/>
                                 <constraint firstAttribute="trailing" secondItem="kX5-Ug-2tn" secondAttribute="trailing" id="gJ8-BS-R9E"/>
@@ -106,7 +118,10 @@
                                 <constraint firstAttribute="trailing" secondItem="ial-nt-ZhC" secondAttribute="trailing" id="lp1-TJ-R8U"/>
                                 <constraint firstItem="ial-nt-ZhC" firstAttribute="leading" secondItem="Thz-DS-wuU" secondAttribute="leading" id="mEl-UZ-hwo"/>
                                 <constraint firstAttribute="trailing" secondItem="0O1-3L-ULF" secondAttribute="trailing" id="mZh-1Q-1Y3"/>
+                                <constraint firstAttribute="trailing" secondItem="kX5-Ug-2tn" secondAttribute="trailing" id="mp4-YQ-Dyf"/>
                                 <constraint firstAttribute="trailing" secondItem="0O1-3L-ULF" secondAttribute="trailing" id="rFU-rF-A0p"/>
+                                <constraint firstAttribute="trailing" secondItem="ial-nt-ZhC" secondAttribute="trailing" id="t7Q-BN-etd"/>
+                                <constraint firstAttribute="trailing" secondItem="kX5-Ug-2tn" secondAttribute="trailing" id="vzQ-5j-cS5"/>
                             </constraints>
                         </stackView>
                     </subviews>
@@ -174,6 +189,9 @@
                                             <real key="value" value="5"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="registerClicked:" destination="-1" eventType="touchUpInside" id="3xf-6l-5ph"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
@@ -205,10 +223,6 @@
                     <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
                     <color key="color" name="btn_dark_blue"/>
                 </activityIndicatorView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-beach-clear" id="DKY-36-EYJ" userLabel="background-beach-clear">
-                    <rect key="frame" x="-7" y="13" width="428" height="883"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="btn_light_pink"/>
