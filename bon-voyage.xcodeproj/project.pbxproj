@@ -17,6 +17,8 @@
 		F0604623286CEF870077E732 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0604622286CEF870077E732 /* CardView.swift */; };
 		F0604626286CEF8F0077E732 /* ShadowCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0604624286CEF8F0077E732 /* ShadowCardView.swift */; };
 		F0604627286CEF8F0077E732 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0604625286CEF8F0077E732 /* RoundedButton.swift */; };
+		F060462A286DCAA10077E732 /* LoginRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0604628286DCAA10077E732 /* LoginRegisterVC.swift */; };
+		F060462B286DCAA10077E732 /* LoginRegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0604629286DCAA10077E732 /* LoginRegisterVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		F0604622286CEF870077E732 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F0604624286CEF8F0077E732 /* ShadowCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowCardView.swift; sourceTree = "<group>"; };
 		F0604625286CEF8F0077E732 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		F0604628286DCAA10077E732 /* LoginRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterVC.swift; sourceTree = "<group>"; };
+		F0604629286DCAA10077E732 /* LoginRegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginRegisterVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 		F060460A286CEAB00077E732 /* bon-voyage */ = {
 			isa = PBXGroup;
 			children = (
+				F060462C286DCAC00077E732 /* LoginRegister */,
 				F060460B286CEAB00077E732 /* AppDelegate.swift */,
 				F060460D286CEAB00077E732 /* SceneDelegate.swift */,
 				F060460F286CEAB00077E732 /* ViewController.swift */,
@@ -85,6 +90,15 @@
 				F0604622286CEF870077E732 /* CardView.swift */,
 			);
 			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		F060462C286DCAC00077E732 /* LoginRegister */ = {
+			isa = PBXGroup;
+			children = (
+				F0604629286DCAA10077E732 /* LoginRegisterVC.xib */,
+				F0604628286DCAA10077E732 /* LoginRegisterVC.swift */,
+			);
+			path = LoginRegister;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +162,7 @@
 				F0604618286CEAB20077E732 /* LaunchScreen.storyboard in Resources */,
 				F0604615286CEAB20077E732 /* Assets.xcassets in Resources */,
 				F0604613286CEAB00077E732 /* Main.storyboard in Resources */,
+				F060462B286DCAA10077E732 /* LoginRegisterVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +180,7 @@
 				F0604627286CEF8F0077E732 /* RoundedButton.swift in Sources */,
 				F060460E286CEAB00077E732 /* SceneDelegate.swift in Sources */,
 				F0604623286CEF870077E732 /* CardView.swift in Sources */,
+				F060462A286DCAA10077E732 /* LoginRegisterVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
