@@ -8,13 +8,29 @@
 import UIKit
 
 class HomeVC: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var vacations = [Vacation]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Vacation Packages"
+        vacations = demoData
+        
         let loginVC = LoginRegisterVC()
         loginVC.modalPresentationStyle = .fullScreen
         present(loginVC, animated: true)
+        setupTableView()
+    }
+    
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
+        tableView.contentInset.top = 8
+        tableView.register(UINib(nibName: "VacationCell", bundle: nil), forCellReuseIdentifier: "VacationCell")
     }
     
     @IBAction func userIconClecked(_ sender: Any) {
@@ -45,6 +61,24 @@ class HomeVC: UIViewController {
 
     }
 
-
 }
+
+extension HomeVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return vacations.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "VacationCell", for: indexPath) as! VacationCell
+        cell.configureCell(vacation: vacations[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 220
+    }
+}
+
+
 

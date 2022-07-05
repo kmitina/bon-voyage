@@ -22,6 +22,7 @@
 		F09424C9287469B5002E4F08 /* Vacation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09424C8287469B5002E4F08 /* Vacation.swift */; };
 		F09424CD28746F84002E4F08 /* VacationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09424CB28746F84002E4F08 /* VacationCell.swift */; };
 		F09424CE28746F84002E4F08 /* VacationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09424CC28746F84002E4F08 /* VacationCell.xib */; };
+		F09424D128747F04002E4F08 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F09424D028747F04002E4F08 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F09424D128747F04002E4F08 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +144,9 @@
 			dependencies = (
 			);
 			name = "bon-voyage";
+			packageProductDependencies = (
+				F09424D028747F04002E4F08 /* SDWebImage */,
+			);
 			productName = "bon-voyage";
 			productReference = F0604608286CEAB00077E732 /* bon-voyage.app */;
 			productType = "com.apple.product-type.application";
@@ -170,6 +175,9 @@
 				Base,
 			);
 			mainGroup = F06045FF286CEAB00077E732;
+			packageReferences = (
+				F09424CF28747F04002E4F08 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = F0604609286CEAB00077E732 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -426,6 +434,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F09424CF28747F04002E4F08 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F09424D028747F04002E4F08 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F09424CF28747F04002E4F08 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F0604600286CEAB00077E732 /* Project object */;
 }
