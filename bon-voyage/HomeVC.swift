@@ -12,6 +12,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var vacations = [Vacation]()
+    var selectedVacation: Vacation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +78,16 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 220
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedVacation = vacations[indexPath.row]
+        performSegue(withIdentifier: "ToVacationDetails", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! VacationDetailsVC
+        destination.vacation = selectedVacation
     }
 }
 
