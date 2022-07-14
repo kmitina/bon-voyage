@@ -24,6 +24,7 @@
 		F09424CD28746F84002E4F08 /* VacationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09424CB28746F84002E4F08 /* VacationCell.swift */; };
 		F09424CE28746F84002E4F08 /* VacationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09424CC28746F84002E4F08 /* VacationCell.xib */; };
 		F09424D128747F04002E4F08 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F09424D028747F04002E4F08 /* SDWebImage */; };
+		F0A829D228803E4E001E064C /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A829D128803E4E001E064C /* CheckoutVC.swift */; };
 		F0D7ABCA287C6A8E00F632A0 /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D7ABC9287C6A8E00F632A0 /* Int+Ext.swift */; };
 		F0D7ABCC287C6C1A00F632A0 /* VacationDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D7ABCB287C6C1A00F632A0 /* VacationDetailsVC.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 		F09424C8287469B5002E4F08 /* Vacation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vacation.swift; sourceTree = "<group>"; };
 		F09424CB28746F84002E4F08 /* VacationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationCell.swift; sourceTree = "<group>"; };
 		F09424CC28746F84002E4F08 /* VacationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VacationCell.xib; sourceTree = "<group>"; };
+		F0A829D128803E4E001E064C /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
 		F0D7ABC9287C6A8E00F632A0 /* Int+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Ext.swift"; sourceTree = "<group>"; };
 		F0D7ABCB287C6C1A00F632A0 /* VacationDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationDetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +98,7 @@
 				F0604614286CEAB20077E732 /* Assets.xcassets */,
 				F0604616286CEAB20077E732 /* LaunchScreen.storyboard */,
 				F0604619286CEAB20077E732 /* Info.plist */,
+				F0A829D128803E4E001E064C /* CheckoutVC.swift */,
 			);
 			path = "bon-voyage";
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0A829D228803E4E001E064C /* CheckoutVC.swift in Sources */,
 				F0604626286CEF8F0077E732 /* ShadowCardView.swift in Sources */,
 				F0604620286CEF4B0077E732 /* DemoData.swift in Sources */,
 				F09424C9287469B5002E4F08 /* Vacation.swift in Sources */,
