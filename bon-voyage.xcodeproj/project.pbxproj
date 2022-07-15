@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F02461922881CC07008B11E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02461912881CC07008B11E0 /* Constants.swift */; };
 		F060460C286CEAB00077E732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F060460B286CEAB00077E732 /* AppDelegate.swift */; };
 		F060460E286CEAB00077E732 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F060460D286CEAB00077E732 /* SceneDelegate.swift */; };
 		F0604610286CEAB00077E732 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F060460F286CEAB00077E732 /* HomeVC.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F02461912881CC07008B11E0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F0604608286CEAB00077E732 /* bon-voyage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bon-voyage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F060460B286CEAB00077E732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F060460D286CEAB00077E732 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		F060460A286CEAB00077E732 /* bon-voyage */ = {
 			isa = PBXGroup;
 			children = (
+				F02461912881CC07008B11E0 /* Constants.swift */,
 				F0D7ABC8287C6A7100F632A0 /* Extensions */,
 				F09424CA28746F3B002E4F08 /* Cells */,
 				F09424C728746995002E4F08 /* Models */,
@@ -92,13 +95,13 @@
 				F060460D286CEAB00077E732 /* SceneDelegate.swift */,
 				F060460F286CEAB00077E732 /* HomeVC.swift */,
 				F0D7ABCB287C6C1A00F632A0 /* VacationDetailsVC.swift */,
+				F0A829D128803E4E001E064C /* CheckoutVC.swift */,
 				F0604621286CEF570077E732 /* Custom Views */,
 				F060461F286CEF4B0077E732 /* DemoData.swift */,
 				F0604611286CEAB00077E732 /* Main.storyboard */,
 				F0604614286CEAB20077E732 /* Assets.xcassets */,
 				F0604616286CEAB20077E732 /* LaunchScreen.storyboard */,
 				F0604619286CEAB20077E732 /* Info.plist */,
-				F0A829D128803E4E001E064C /* CheckoutVC.swift */,
 			);
 			path = "bon-voyage";
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				F0604620286CEF4B0077E732 /* DemoData.swift in Sources */,
 				F09424C9287469B5002E4F08 /* Vacation.swift in Sources */,
 				F0604610286CEAB00077E732 /* HomeVC.swift in Sources */,
+				F02461922881CC07008B11E0 /* Constants.swift in Sources */,
 				F060460C286CEAB00077E732 /* AppDelegate.swift in Sources */,
 				F0D7ABCA287C6A8E00F632A0 /* Int+Ext.swift in Sources */,
 				F0604627286CEF8F0077E732 /* RoundedButton.swift in Sources */,

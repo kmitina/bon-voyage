@@ -24,6 +24,28 @@ class VacationDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUi()
+        setMainImage(index: 0)
+        setupCollectionView()
+
+    }
+    
+    func setupCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+    
+    func setMainImage(index: Int) {
+        let imageUrl = vacation.images[index]
+        if let url = URL(string: imageUrl) {
+            
+            mainImage.layer.cornerRadius = 10
+            mainImage.sd_imageIndicator = SDWebImageActivityIndicator.medium
+            mainImage.sd_setImage(with: url, placeholderImage: UIImage(named: ImageName.PlaceholderImage))
+        }
+    }
+    
+    func setupUi() {
         title = vacation.title
         
         activitiesLbl.text = vacation.activities
@@ -32,17 +54,6 @@ class VacationDetailsVC: UIViewController {
         numberOfNightsLbl.text = "\(vacation.numberOfNights) night accomodations"
         airfareLbl.text = vacation.airfare
         
-        let imageUrl = vacation.images[0]
-        if let url = URL(string: imageUrl) {
-            
-            mainImage.layer.cornerRadius = 10
-            mainImage.sd_imageIndicator = SDWebImageActivityIndicator.medium
-            mainImage.sd_setImage(with: url, placeholderImage: UIImage(named: "background-beach-alpha"))
-        }
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
-
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -59,20 +70,14 @@ extension VacationDetailsVC: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThumbnailCell", for: indexPath) as! ThumbnailCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellId.ThumbnailCell, for: indexPath) as! ThumbnailCell
         let url = vacation.images[indexPath.row]
         cell.configureCell(url: url)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let imageUrl = vacation.images[indexPath.item ]
-        if let url = URL(string: imageUrl) {
-            
-            mainImage.layer.cornerRadius = 10
-            mainImage.sd_imageIndicator = SDWebImageActivityIndicator.medium
-            mainImage.sd_setImage(with: url, placeholderImage: UIImage(named: "background-beach-alpha"))
-        }
+        setMainImage(index: indexPath.item)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

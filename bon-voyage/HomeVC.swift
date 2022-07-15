@@ -31,7 +31,7 @@ class HomeVC: UIViewController {
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
         tableView.contentInset.top = 8
-        tableView.register(UINib(nibName: "VacationCell", bundle: nil), forCellReuseIdentifier: "VacationCell")
+        tableView.register(UINib(nibName: CellId.VacationCell, bundle: nil), forCellReuseIdentifier: CellId.VacationCell)
     }
     
     @IBAction func userIconClecked(_ sender: Any) {
@@ -71,7 +71,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "VacationCell", for: indexPath) as! VacationCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellId.VacationCell, for: indexPath) as! VacationCell
         cell.configureCell(vacation: vacations[indexPath.row])
         return cell
     }
@@ -82,7 +82,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedVacation = vacations[indexPath.row]
-        performSegue(withIdentifier: "ToVacationDetails", sender: self)
+        performSegue(withIdentifier: SegueId.ToVacationDetails, sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
