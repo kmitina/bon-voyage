@@ -44,6 +44,12 @@ class VacationDetailsVC: UIViewController {
         collectionView.dataSource = self
 
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let checkoutVC = segue.destination as? CheckoutVC {
+            checkoutVC.vacation = self.vacation
+        }
+    }
 }
 
 extension VacationDetailsVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

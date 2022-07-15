@@ -507,12 +507,6 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGb-MF-ni5" userLabel="Select Card View">
                                                 <rect key="frame" x="0.0" y="0.0" width="179" height="96"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Ending" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YE-Cq-ZFU">
-                                                        <rect key="frame" x="6" y="68" width="167" height="16"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="creditcard" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4u7-am-ZZr">
                                                         <rect key="frame" x="54.5" y="13.5" width="70" height="46.5"/>
                                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -521,6 +515,12 @@
                                                             <constraint firstAttribute="width" constant="70" id="Aet-Qs-vEN"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Ending" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YE-Cq-ZFU">
+                                                        <rect key="frame" x="6" y="68" width="167" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="3YE-Cq-ZFU" secondAttribute="bottom" constant="12" id="1M1-If-UAx"/>
@@ -692,6 +692,9 @@
     <designables>
         <designable name="PJm-AE-cmV">
             <size key="intrinsicContentSize" width="73.5" height="31"/>
+        </designable>
+        <designable name="Tqq-L0-Du8">
+            <size key="intrinsicContentSize" width="102.5" height="34.5"/>
         </designable>
     </designables>
     <resources>

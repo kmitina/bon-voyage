@@ -25,11 +25,62 @@ class CheckoutVC: UIViewController {
     @IBOutlet weak var bankIcon: UIImageView!
     @IBOutlet weak var bankEndingIn: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var vacation: Vacation!
+    
+    var currentSelectedPaymentType: PaymentType?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let selectCardTouch = UITapGestureRecognizer(target: self, action: #selector(selectCardTapped))
+        selectCardView.addGestureRecognizer(selectCardTouch)
+        
+        let selectBankTouch = UITapGestureRecognizer(target: self, action: #selector(selectBankTapped))
+        selectBankView.addGestureRecognizer(selectBankTouch)
+        
+        vacationTitle.text = vacation.title
+        airfareLbl.text = vacation.airfare
+        detailsPriceLbl.text = "All inclusive price: " + vacation.price.formatToCurrencyString()
+        numberOfNightsLbl.text = "\(vacation.numberOfNights) night accomodations"
+        
+        priceLbl.text = vacation.price.formatToCurrencyString()
+
+    }
+    
+    @objc func selectCardTapped() {
+        if currentSelectedPaymentType == .card { return }
+        
+        currentSelectedPaymentType = .card
+        
+        selectCardView.layer.borderColor = UIColor(named: "border_blue")?.cgColor
+        selectCardView.layer.borderWidth = 2
+        selectBankView.layer.borderColor = UIColor.lightGray.cgColor
+        selectBankView.layer.borderWidth = 1
+        
+        cardIcon.tintColor = UIColor(named: "border_blue")
+        bankIcon.tintColor = UIColor.lightGray
+    }
+    
+    @objc func selectBankTapped() {
+        
+        if currentSelectedPaymentType == .bank { return }
+        
+        currentSelectedPaymentType = .bank
+        
+        selectBankView.layer.borderColor = UIColor(named: "border_blue")?.cgColor
+        selectBankView.layer.borderWidth = 2
+        selectCardView.layer.borderColor = UIColor.lightGray.cgColor
+        selectCardView.layer.borderWidth = 1
+        
+        bankIcon.tintColor = UIColor(named: "border_blue")
+        cardIcon.tintColor = UIColor.lightGray
+        
     }
 
+}
+
+enum PaymentType {
+    case card
+    case bank
 }
