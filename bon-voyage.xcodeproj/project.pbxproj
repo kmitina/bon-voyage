@@ -25,6 +25,8 @@
 		F09424CD28746F84002E4F08 /* VacationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09424CB28746F84002E4F08 /* VacationCell.swift */; };
 		F09424CE28746F84002E4F08 /* VacationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09424CC28746F84002E4F08 /* VacationCell.xib */; };
 		F09424D128747F04002E4F08 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F09424D028747F04002E4F08 /* SDWebImage */; };
+		F09DCF802885AD6B00B77678 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F09DCF7F2885AD6B00B77678 /* GoogleService-Info.plist */; };
+		F09DCF832885AF0500B77678 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F09DCF822885AF0500B77678 /* FirebaseAuth */; };
 		F0A829D228803E4E001E064C /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A829D128803E4E001E064C /* CheckoutVC.swift */; };
 		F0D7ABCA287C6A8E00F632A0 /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D7ABC9287C6A8E00F632A0 /* Int+Ext.swift */; };
 		F0D7ABCC287C6C1A00F632A0 /* VacationDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D7ABCB287C6C1A00F632A0 /* VacationDetailsVC.swift */; };
@@ -50,6 +52,7 @@
 		F09424C8287469B5002E4F08 /* Vacation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vacation.swift; sourceTree = "<group>"; };
 		F09424CB28746F84002E4F08 /* VacationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationCell.swift; sourceTree = "<group>"; };
 		F09424CC28746F84002E4F08 /* VacationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VacationCell.xib; sourceTree = "<group>"; };
+		F09DCF7F2885AD6B00B77678 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F0A829D128803E4E001E064C /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
 		F0D7ABC9287C6A8E00F632A0 /* Int+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Ext.swift"; sourceTree = "<group>"; };
 		F0D7ABCB287C6C1A00F632A0 /* VacationDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationDetailsVC.swift; sourceTree = "<group>"; };
@@ -61,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F09424D128747F04002E4F08 /* SDWebImage in Frameworks */,
+				F09DCF832885AF0500B77678 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +102,7 @@
 				F0A829D128803E4E001E064C /* CheckoutVC.swift */,
 				F0604621286CEF570077E732 /* Custom Views */,
 				F060461F286CEF4B0077E732 /* DemoData.swift */,
+				F09DCF7F2885AD6B00B77678 /* GoogleService-Info.plist */,
 				F0604611286CEAB00077E732 /* Main.storyboard */,
 				F0604614286CEAB20077E732 /* Assets.xcassets */,
 				F0604616286CEAB20077E732 /* LaunchScreen.storyboard */,
@@ -169,6 +174,7 @@
 			name = "bon-voyage";
 			packageProductDependencies = (
 				F09424D028747F04002E4F08 /* SDWebImage */,
+				F09DCF822885AF0500B77678 /* FirebaseAuth */,
 			);
 			productName = "bon-voyage";
 			productReference = F0604608286CEAB00077E732 /* bon-voyage.app */;
@@ -200,6 +206,7 @@
 			mainGroup = F06045FF286CEAB00077E732;
 			packageReferences = (
 				F09424CF28747F04002E4F08 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				F09DCF812885AF0500B77678 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = F0604609286CEAB00077E732 /* Products */;
 			projectDirPath = "";
@@ -216,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0604618286CEAB20077E732 /* LaunchScreen.storyboard in Resources */,
+				F09DCF802885AD6B00B77678 /* GoogleService-Info.plist in Resources */,
 				F0604615286CEAB20077E732 /* Assets.xcassets in Resources */,
 				F0604613286CEAB00077E732 /* Main.storyboard in Resources */,
 				F09424CE28746F84002E4F08 /* VacationCell.xib in Resources */,
@@ -472,6 +480,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		F09DCF812885AF0500B77678 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -479,6 +495,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F09424CF28747F04002E4F08 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		F09DCF822885AF0500B77678 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F09DCF812885AF0500B77678 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
