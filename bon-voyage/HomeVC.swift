@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class HomeVC: UIViewController {
     
@@ -19,10 +20,10 @@ class HomeVC: UIViewController {
         
         title = "Vacation Packages"
         vacations = demoData
-        
-        let loginVC = LoginRegisterVC()
-        loginVC.modalPresentationStyle = .fullScreen
-        present(loginVC, animated: true)
+//        
+//        let loginVC = LoginRegisterVC()
+//        loginVC.modalPresentationStyle = .fullScreen
+//        present(loginVC, animated: true)
         setupTableView()
     }
     
@@ -37,9 +38,17 @@ class HomeVC: UIViewController {
     @IBAction func userIconClecked(_ sender: Any) {
         let userSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let logout = UIAlertAction(title:"Logout", style: .default) { action in
-            let loginVC = LoginRegisterVC()
-            loginVC.modalPresentationStyle = .fullScreen
-            self.present(loginVC, animated: true)
+            // Logout
+            do {
+                try Auth.auth().signOut()
+                let loginVC = LoginRegisterVC()
+                loginVC.modalPresentationStyle = .fullScreen
+                self.present(loginVC, animated: true)
+            }
+            catch {
+                debugPrint(error.localizedDescription)
+            }
+
         }
         
         let manageCards = UIAlertAction(title: "Manage Credit Cards", style: .default) { action in

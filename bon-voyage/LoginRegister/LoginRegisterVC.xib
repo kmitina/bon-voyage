@@ -10,6 +10,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginRegisterVC" customModule="bon_voyage" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="WTT-UB-1iw" id="eTW-Pn-HIv"/>
+                <outlet property="loginEmailTxt" destination="ial-nt-ZhC" id="qii-8c-pd3"/>
+                <outlet property="loginPassword" destination="kX5-Ug-2tn" id="g8W-wI-ien"/>
+                <outlet property="registerConfirmPassTxt" destination="xXu-fk-AYA" id="ZEy-fl-y3B"/>
+                <outlet property="registerEmailTxt" destination="20N-uL-ShA" id="57b-O6-htE"/>
+                <outlet property="registerPasswordTx" destination="2s5-Od-EPO" id="HMW-yP-wnH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -80,7 +86,7 @@
                                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0O1-3L-ULF" customClass="RoundedButton" customModule="bon_voyage" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="118.5" width="354" height="35"/>
+                                    <rect key="frame" x="0.0" y="118.5" width="59.5" height="35"/>
                                     <color key="backgroundColor" name="btn_light_blue"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="35" id="vdY-Ca-XAk"/>
