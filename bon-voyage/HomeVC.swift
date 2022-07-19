@@ -14,17 +14,30 @@ class HomeVC: UIViewController {
     
     var vacations = [Vacation]()
     var selectedVacation: Vacation?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Vacation Packages"
         vacations = demoData
-//        
-//        let loginVC = LoginRegisterVC()
-//        loginVC.modalPresentationStyle = .fullScreen
-//        present(loginVC, animated: true)
+        
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        Auth.auth().addStateDidChangeListener { auth, user in
+            // If there is user logged in, stay here on homeVC
+            // else, take them to the login page
+            
+            if user == nil {
+                let loginVC = LoginRegisterVC()
+                loginVC.modalPresentationStyle = .fullScreen
+                self.present(loginVC, animated: true)
+            } else {
+                // Stay here
+            }
+            
+        }
     }
     
     func setupTableView() {
@@ -41,14 +54,11 @@ class HomeVC: UIViewController {
             // Logout
             do {
                 try Auth.auth().signOut()
-                let loginVC = LoginRegisterVC()
-                loginVC.modalPresentationStyle = .fullScreen
-                self.present(loginVC, animated: true)
             }
             catch {
                 debugPrint(error.localizedDescription)
             }
-
+            
         }
         
         let manageCards = UIAlertAction(title: "Manage Credit Cards", style: .default) { action in
@@ -67,10 +77,10 @@ class HomeVC: UIViewController {
         userSheet.addAction(close)
         
         present(userSheet, animated: true)
-
-
+        
+        
     }
-
+    
 }
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {

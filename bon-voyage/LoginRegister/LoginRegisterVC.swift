@@ -25,7 +25,24 @@ class LoginRegisterVC: UIViewController {
     }
 
     @IBAction func loginBTNClicked(_ sender: Any) {
-        dismiss(animated: true)
+        guard let email = loginEmailTxt.text, email.isNotEmpty,
+        let password = loginPassword.text, password.isNotEmpty else {
+            simpleAlert(msg: "Please fill in all required fields.")
+            return
+        }
+        activityIndicator.startAnimating()
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            defer {
+                self.activityIndicator.stopAnimating()
+            }
+            if let error = error {
+                self.simpleAlert(msg: error.localizedDescription)
+                return
+            }
+            
+            self.dismiss(animated: true)
+        }
+        
     }
     
     
@@ -33,16 +50,17 @@ class LoginRegisterVC: UIViewController {
         
         // Validation
         
-        guard let email = registerEmailTxt.text, !email.isEmpty,
-        let password = registerPasswordTx.text, !password.isEmpty,
-        let confirmPassword = registerPasswordTx.text, !confirmPassword.isEmpty else {
+        guard let email = registerEmailTxt.text, email.isNotEmpty,
+        let password = registerPasswordTx.text, password.isNotEmpty,
+        let confirmPassword = registerConfirmPassTxt.text, confirmPassword.isNotEmpty else {
             
             // Present alert
+            simpleAlert(msg: "Please fill in all required fields.")
             return
         }
         
         if password != confirmPassword {
-            // Present alert
+            simpleAlert(msg: "Passwords do not match")
             return
         }
         
@@ -56,6 +74,7 @@ class LoginRegisterVC: UIViewController {
             
             if let error = error {
                 debugPrint(error.localizedDescription)
+                self.simpleAlert(msg: error.localizedDescription)
                 return
             }
             
