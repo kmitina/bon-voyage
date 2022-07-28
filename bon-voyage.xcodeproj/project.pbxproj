@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		F02461922881CC07008B11E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02461912881CC07008B11E0 /* Constants.swift */; };
+		F05BB7CD28929E17003D1849 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F05BB7CC28929E17003D1849 /* FirebaseAuth */; };
+		F05BB7CF28929E17003D1849 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F05BB7CE28929E17003D1849 /* FirebaseFirestore */; };
+		F05BB7D128929E17003D1849 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = F05BB7D028929E17003D1849 /* FirebaseFunctions */; };
+		F05BB7D42892A12C003D1849 /* Stripe in Frameworks */ = {isa = PBXBuildFile; productRef = F05BB7D32892A12C003D1849 /* Stripe */; };
 		F060460C286CEAB00077E732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F060460B286CEAB00077E732 /* AppDelegate.swift */; };
 		F060460E286CEAB00077E732 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F060460D286CEAB00077E732 /* SceneDelegate.swift */; };
 		F0604610286CEAB00077E732 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F060460F286CEAB00077E732 /* HomeVC.swift */; };
@@ -68,7 +72,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F09424D128747F04002E4F08 /* SDWebImage in Frameworks */,
+				F05BB7CF28929E17003D1849 /* FirebaseFirestore in Frameworks */,
+				F05BB7D128929E17003D1849 /* FirebaseFunctions in Frameworks */,
+				F05BB7CD28929E17003D1849 /* FirebaseAuth in Frameworks */,
 				F09DCF832885AF0500B77678 /* FirebaseAuth in Frameworks */,
+				F05BB7D42892A12C003D1849 /* Stripe in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +189,10 @@
 			packageProductDependencies = (
 				F09424D028747F04002E4F08 /* SDWebImage */,
 				F09DCF822885AF0500B77678 /* FirebaseAuth */,
+				F05BB7CC28929E17003D1849 /* FirebaseAuth */,
+				F05BB7CE28929E17003D1849 /* FirebaseFirestore */,
+				F05BB7D028929E17003D1849 /* FirebaseFunctions */,
+				F05BB7D32892A12C003D1849 /* Stripe */,
 			);
 			productName = "bon-voyage";
 			productReference = F0604608286CEAB00077E732 /* bon-voyage.app */;
@@ -213,6 +225,8 @@
 			packageReferences = (
 				F09424CF28747F04002E4F08 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				F09DCF812885AF0500B77678 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F05BB7CB28929E17003D1849 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F05BB7D22892A12C003D1849 /* XCRemoteSwiftPackageReference "stripe-ios" */,
 			);
 			productRefGroup = F0604609286CEAB00077E732 /* Products */;
 			projectDirPath = "";
@@ -480,6 +494,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F05BB7CB28929E17003D1849 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		F05BB7D22892A12C003D1849 /* XCRemoteSwiftPackageReference "stripe-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stripe/stripe-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 22.0.0;
+			};
+		};
 		F09424CF28747F04002E4F08 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -499,6 +529,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F05BB7CC28929E17003D1849 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F05BB7CB28929E17003D1849 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		F05BB7CE28929E17003D1849 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F05BB7CB28929E17003D1849 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		F05BB7D028929E17003D1849 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F05BB7CB28929E17003D1849 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		F05BB7D32892A12C003D1849 /* Stripe */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F05BB7D22892A12C003D1849 /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = Stripe;
+		};
 		F09424D028747F04002E4F08 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F09424CF28747F04002E4F08 /* XCRemoteSwiftPackageReference "SDWebImage" */;
