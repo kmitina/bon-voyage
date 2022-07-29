@@ -34,7 +34,9 @@ class HomeVC: UIViewController {
                 loginVC.modalPresentationStyle = .fullScreen
                 self.present(loginVC, animated: true)
             } else {
-                // Stay here
+                UserManager.instance.getCurrentUser {
+                    print(UserManager.instance.user?.email)
+                }
             }
             
         }

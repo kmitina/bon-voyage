@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F02461922881CC07008B11E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02461912881CC07008B11E0 /* Constants.swift */; };
+		F0566E2328942FD0008B34F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0566E2228942FD0008B34F5 /* User.swift */; };
+		F0566E262894364A008B34F5 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0566E252894364A008B34F5 /* UserManager.swift */; };
 		F05BB7CD28929E17003D1849 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F05BB7CC28929E17003D1849 /* FirebaseAuth */; };
 		F05BB7CF28929E17003D1849 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F05BB7CE28929E17003D1849 /* FirebaseFirestore */; };
 		F05BB7D128929E17003D1849 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = F05BB7D028929E17003D1849 /* FirebaseFunctions */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		F02461912881CC07008B11E0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F0566E2228942FD0008B34F5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F0566E252894364A008B34F5 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		F0604608286CEAB00077E732 /* bon-voyage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bon-voyage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F060460B286CEAB00077E732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F060460D286CEAB00077E732 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F0566E2428943611008B34F5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F0566E252894364A008B34F5 /* UserManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		F06045FF286CEAB00077E732 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +114,7 @@
 		F060460A286CEAB00077E732 /* bon-voyage */ = {
 			isa = PBXGroup;
 			children = (
+				F0566E2428943611008B34F5 /* Services */,
 				F02461912881CC07008B11E0 /* Constants.swift */,
 				F0D7ABC8287C6A7100F632A0 /* Extensions */,
 				F09424CA28746F3B002E4F08 /* Cells */,
@@ -146,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				F09424C8287469B5002E4F08 /* Vacation.swift */,
+				F0566E2228942FD0008B34F5 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,6 +274,7 @@
 			files = (
 				F0A829D228803E4E001E064C /* CheckoutVC.swift in Sources */,
 				F0604626286CEF8F0077E732 /* ShadowCardView.swift in Sources */,
+				F0566E262894364A008B34F5 /* UserManager.swift in Sources */,
 				F0604620286CEF4B0077E732 /* DemoData.swift in Sources */,
 				F07747892886C96700E3A621 /* String+Ext.swift in Sources */,
 				F09424C9287469B5002E4F08 /* Vacation.swift in Sources */,
@@ -272,6 +287,7 @@
 				F060460E286CEAB00077E732 /* SceneDelegate.swift in Sources */,
 				F06B499D287D977000B7D7C4 /* ThumbnailCell.swift in Sources */,
 				F0604623286CEF870077E732 /* CardView.swift in Sources */,
+				F0566E2328942FD0008B34F5 /* User.swift in Sources */,
 				F0D7ABCC287C6C1A00F632A0 /* VacationDetailsVC.swift in Sources */,
 				F07747872886B71D00E3A621 /* ViewController+Ext.swift in Sources */,
 				F060462A286DCAA10077E732 /* LoginRegisterVC.swift in Sources */,

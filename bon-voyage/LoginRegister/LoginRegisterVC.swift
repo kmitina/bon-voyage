@@ -98,17 +98,7 @@ class LoginRegisterVC: UIViewController {
                     return
                 }
                 
-                guard let userId = Auth.auth().currentUser?.uid else { return }
-                
-                Firestore.firestore().collection("users").document(userId).getDocument { snapshot, error in
-                    if let error = error {
-                        debugPrint(error.localizedDescription)
-                        return
-                    }
-                    guard let data = snapshot?.data() else { return }
-                    
-                    print(data)
-                }
+              
                 
                 self.dismiss(animated: true)
             }
