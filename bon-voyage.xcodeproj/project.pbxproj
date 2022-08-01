@@ -36,6 +36,7 @@
 		F09DCF802885AD6B00B77678 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F09DCF7F2885AD6B00B77678 /* GoogleService-Info.plist */; };
 		F09DCF832885AF0500B77678 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F09DCF822885AF0500B77678 /* FirebaseAuth */; };
 		F0A829D228803E4E001E064C /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A829D128803E4E001E064C /* CheckoutVC.swift */; };
+		F0B80EBC2898498A00A4683B /* StripeApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B80EBB2898498A00A4683B /* StripeApiClient.swift */; };
 		F0D7ABCA287C6A8E00F632A0 /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D7ABC9287C6A8E00F632A0 /* Int+Ext.swift */; };
 		F0D7ABCC287C6C1A00F632A0 /* VacationDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D7ABCB287C6C1A00F632A0 /* VacationDetailsVC.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		F09424CC28746F84002E4F08 /* VacationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VacationCell.xib; sourceTree = "<group>"; };
 		F09DCF7F2885AD6B00B77678 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F0A829D128803E4E001E064C /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
+		F0B80EBB2898498A00A4683B /* StripeApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeApiClient.swift; sourceTree = "<group>"; };
 		F0D7ABC9287C6A8E00F632A0 /* Int+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Ext.swift"; sourceTree = "<group>"; };
 		F0D7ABCB287C6C1A00F632A0 /* VacationDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationDetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +116,7 @@
 		F060460A286CEAB00077E732 /* bon-voyage */ = {
 			isa = PBXGroup;
 			children = (
+				F0B80EBA2898497600A4683B /* Stripe */,
 				F0566E2428943611008B34F5 /* Services */,
 				F02461912881CC07008B11E0 /* Constants.swift */,
 				F0D7ABC8287C6A7100F632A0 /* Extensions */,
@@ -172,6 +175,14 @@
 				F06B499C287D977000B7D7C4 /* ThumbnailCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		F0B80EBA2898497600A4683B /* Stripe */ = {
+			isa = PBXGroup;
+			children = (
+				F0B80EBB2898498A00A4683B /* StripeApiClient.swift */,
+			);
+			path = Stripe;
 			sourceTree = "<group>";
 		};
 		F0D7ABC8287C6A7100F632A0 /* Extensions */ = {
@@ -272,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0B80EBC2898498A00A4683B /* StripeApiClient.swift in Sources */,
 				F0A829D228803E4E001E064C /* CheckoutVC.swift in Sources */,
 				F0604626286CEF8F0077E732 /* ShadowCardView.swift in Sources */,
 				F0566E262894364A008B34F5 /* UserManager.swift in Sources */,
