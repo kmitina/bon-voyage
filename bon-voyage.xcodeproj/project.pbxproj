@@ -38,6 +38,7 @@
 		F0A829D228803E4E001E064C /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A829D128803E4E001E064C /* CheckoutVC.swift */; };
 		F0B80EBC2898498A00A4683B /* StripeApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B80EBB2898498A00A4683B /* StripeApiClient.swift */; };
 		F0B80EBE28995F0B00A4683B /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B80EBD28995F0B00A4683B /* Wallet.swift */; };
+		F0C1FF5F289AB53900A67AB3 /* FeesCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C1FF5E289AB53900A67AB3 /* FeesCalculator.swift */; };
 		F0D7ABCA287C6A8E00F632A0 /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D7ABC9287C6A8E00F632A0 /* Int+Ext.swift */; };
 		F0D7ABCC287C6C1A00F632A0 /* VacationDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D7ABCB287C6C1A00F632A0 /* VacationDetailsVC.swift */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 		F0A829D128803E4E001E064C /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
 		F0B80EBB2898498A00A4683B /* StripeApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeApiClient.swift; sourceTree = "<group>"; };
 		F0B80EBD28995F0B00A4683B /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		F0C1FF5E289AB53900A67AB3 /* FeesCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeesCalculator.swift; sourceTree = "<group>"; };
 		F0D7ABC9287C6A8E00F632A0 /* Int+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Ext.swift"; sourceTree = "<group>"; };
 		F0D7ABCB287C6C1A00F632A0 /* VacationDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationDetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,6 +186,7 @@
 			children = (
 				F0B80EBB2898498A00A4683B /* StripeApiClient.swift */,
 				F0B80EBD28995F0B00A4683B /* Wallet.swift */,
+				F0C1FF5E289AB53900A67AB3 /* FeesCalculator.swift */,
 			);
 			path = Stripe;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				F0A829D228803E4E001E064C /* CheckoutVC.swift in Sources */,
 				F0604626286CEF8F0077E732 /* ShadowCardView.swift in Sources */,
 				F0566E262894364A008B34F5 /* UserManager.swift in Sources */,
+				F0C1FF5F289AB53900A67AB3 /* FeesCalculator.swift in Sources */,
 				F0604620286CEF4B0077E732 /* DemoData.swift in Sources */,
 				F07747892886C96700E3A621 /* String+Ext.swift in Sources */,
 				F09424C9287469B5002E4F08 /* Vacation.swift in Sources */,

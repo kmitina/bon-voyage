@@ -27,6 +27,9 @@ class VacationDetailsVC: UIViewController {
         setupUi()
         setMainImage(index: 0)
         setupCollectionView()
+        
+        let fees = FeesCalculator.calculateFeesForCard(subtotal: vacation.price)
+        print(fees)
 
     }
     
