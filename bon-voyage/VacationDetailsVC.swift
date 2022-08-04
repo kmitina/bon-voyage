@@ -29,7 +29,7 @@ class VacationDetailsVC: UIViewController {
         setupCollectionView()
         
         let fees = FeesCalculator.calculateFeesForCard(subtotal: vacation.price)
-        print(fees)
+        print(fees )
 
     }
     

@@ -491,6 +491,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Card">
                                                     <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeCardClicked:" destination="Pwd-xN-cfn" eventType="touchUpInside" id="Kxx-Re-ks8"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52w-ro-dSU">
                                                 <rect key="frame" x="109.5" y="0.5" width="54" height="29.5"/>
@@ -498,6 +501,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Bank">
                                                     <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeBankClicked:" destination="Pwd-xN-cfn" eventType="touchUpInside" id="bPl-K6-JpC"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -641,6 +647,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="payButtonClicked:" destination="Pwd-xN-cfn" eventType="touchUpInside" id="ErZ-Mz-MsF"/>
+                                </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="58N-J2-5O7">
                                 <rect key="frame" x="370" y="812.5" width="20" height="20"/>

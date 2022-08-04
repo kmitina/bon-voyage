@@ -35,7 +35,18 @@ class CheckoutVC: UIViewController {
         
         setupTapGestiures()
         setupUi()
+        setCheckoutLabelDetail()
         
+    }
+    
+    func setCheckoutLabelDetail() {
+        priceLbl.text = "Package Price: \(vacation.price.formatToCurrencyString())"
+        
+        let processingFee = FeesCalculator.calculateFeesForCard(subtotal: vacation.price)
+        processingFeeLbl.text = "Processing Fees: \(processingFee.formatToCurrencyString())"
+        
+        let total = processingFee + vacation.price
+        totalLbl.text = "Total: \(total.formatToCurrencyString())"
     }
     
     func setupTapGestiures() {
@@ -55,7 +66,13 @@ class CheckoutVC: UIViewController {
         priceLbl.text = vacation.price.formatToCurrencyString()
     }
     
+        // MARK: Select Card
+    
     @objc func selectCardTapped() {
+        setCardPaymentView()
+    }
+    
+    func setCardPaymentView() {
         if currentSelectedPaymentType == .card { return }
         
         currentSelectedPaymentType = .card
@@ -69,8 +86,14 @@ class CheckoutVC: UIViewController {
         bankIcon.tintColor = UIColor.lightGray
     }
     
+    // MARK: Select Bank
     @objc func selectBankTapped() {
         
+        setBankPaymentView()
+        
+    }
+    
+    func setBankPaymentView() {
         if currentSelectedPaymentType == .bank { return }
         
         currentSelectedPaymentType = .bank
@@ -82,6 +105,17 @@ class CheckoutVC: UIViewController {
         
         bankIcon.tintColor = UIColor(named: AppColor.BorderBlue)
         cardIcon.tintColor = UIColor.lightGray
+    }
+    
+    @IBAction func changeCardClicked(_ sender: Any) {
+        
+    }
+    
+    @IBAction func changeBankClicked(_ sender: Any) {
+        
+    }
+    
+    @IBAction func payButtonClicked(_ sender: Any) {
         
     }
     
