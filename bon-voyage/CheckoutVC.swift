@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import FirebaseFunctions
+import FirebaseFirestore
+import FirebaseAuth
+import Stripe
 
 class CheckoutVC: UIViewController {
     
@@ -30,9 +34,12 @@ class CheckoutVC: UIViewController {
     
     var currentSelectedPaymentType: PaymentType?
     
+    var paymentContext: STPPaymentContext!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupStripe()
         setupTapGestiures()
         setupUi()
         setCheckoutLabelDetail()
@@ -107,8 +114,19 @@ class CheckoutVC: UIViewController {
         cardIcon.tintColor = UIColor.lightGray
     }
     
-    @IBAction func changeCardClicked(_ sender: Any) {
+    func setupStripe() {
         
+        guard (UserManager.instance.user?.stripeId) != nil else { return }
+        
+        let config = STPPaymentConfiguration.shared
+        paymentContext = STPPaymentContext(customerContext: Wallet.instance.customerContext, configuration: config, theme: .defaultTheme)
+        paymentContext.hostViewController = self
+        paymentContext.delegate = self
+    }
+    
+    
+    @IBAction func changeCardClicked(_ sender: Any) {
+        self.paymentContext.pushPaymentOptionsViewController()
     }
     
     @IBAction func changeBankClicked(_ sender: Any) {
@@ -118,6 +136,48 @@ class CheckoutVC: UIViewController {
     @IBAction func payButtonClicked(_ sender: Any) {
         
     }
+    
+}
+
+// MARK: Stripe Delegate Psudeo Code
+
+extension CheckoutVC: STPPaymentContextDelegate {
+    
+    // MARK: Payment Context Changed
+    
+    func paymentContextDidChange(_ paymentContext: STPPaymentContext) {
+        
+        // Triggers when the content of the payment context changes, like when the user selects a new payment method or enters shipping information.
+        
+        
+        
+    }
+    
+    func paymentContext(_ paymentContext: STPPaymentContext, didFailToLoadWithError error: Error) {
+        
+    }
+    
+    // MARK: Create Payment Intent
+    
+    func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPPaymentStatusBlock) {
+        
+        // Request Stripe payment intent, and return client secret.
+              // The client secret can be used to complete a payment from your frontend.
+              // Once the client secret is obtained, create paymentIntentParams
+              // Confirm the PaymentIntent
+              // STPPaymentHandler.shared().confirmPayment(paymentIntentParams, with: paymentContext)
+        
+        
+        
+    }
+    // MARK: DId Finish Payment
+    
+    func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
+        
+        // Take action based on return status: error, success, userCancellation
+
+    }
+    
     
 }
 
