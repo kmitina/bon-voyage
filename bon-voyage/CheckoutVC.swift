@@ -40,13 +40,13 @@ class CheckoutVC: UIViewController {
         super.viewDidLoad()
         
         setupStripe()
-        setupTapGestiures()
+        setupTapGestures()
         setupUi()
-        setCheckoutLabelDetail()
+        setCheckoutLabelDetails()
         
     }
     
-    func setCheckoutLabelDetail() {
+    func setCheckoutLabelDetails() {
         priceLbl.text = "Package Price: \(vacation.price.formatToCurrencyString())"
         
         let processingFee = FeesCalculator.calculateFeesForCard(subtotal: vacation.price)
@@ -54,14 +54,6 @@ class CheckoutVC: UIViewController {
         
         let total = processingFee + vacation.price
         totalLbl.text = "Total: \(total.formatToCurrencyString())"
-    }
-    
-    func setupTapGestiures() {
-        let selectCardTouch = UITapGestureRecognizer(target: self, action: #selector(selectCardTapped))
-        selectCardView.addGestureRecognizer(selectCardTouch)
-        
-        let selectBankTouch = UITapGestureRecognizer(target: self, action: #selector(selectBankTapped))
-        selectBankView.addGestureRecognizer(selectBankTouch)
     }
     
     func setupUi() {
@@ -73,10 +65,17 @@ class CheckoutVC: UIViewController {
         priceLbl.text = vacation.price.formatToCurrencyString()
     }
     
-        // MARK: Select Card
+    func setupTapGestures() {
+        let selectCardTouch = UITapGestureRecognizer(target: self, action: #selector(selectCardTapped))
+        selectCardView.addGestureRecognizer(selectCardTouch)
+        
+        let selectBankTouch = UITapGestureRecognizer(target: self, action: #selector(selectBankTapped))
+        selectBankView.addGestureRecognizer(selectBankTouch)
+    }
     
+    // MARK: Select Card
     @objc func selectCardTapped() {
-        setCardPaymentView()
+       setCardPaymentView()
     }
     
     func setCardPaymentView() {
@@ -86,6 +85,7 @@ class CheckoutVC: UIViewController {
         
         selectCardView.layer.borderColor = UIColor(named: AppColor.BorderBlue)?.cgColor
         selectCardView.layer.borderWidth = 2
+        
         selectBankView.layer.borderColor = UIColor.lightGray.cgColor
         selectBankView.layer.borderWidth = 1
         
@@ -95,9 +95,7 @@ class CheckoutVC: UIViewController {
     
     // MARK: Select Bank
     @objc func selectBankTapped() {
-        
-        setBankPaymentView()
-        
+       setBankPaymentView()
     }
     
     func setBankPaymentView() {
@@ -107,6 +105,7 @@ class CheckoutVC: UIViewController {
         
         selectBankView.layer.borderColor = UIColor(named: AppColor.BorderBlue)?.cgColor
         selectBankView.layer.borderWidth = 2
+        
         selectCardView.layer.borderColor = UIColor.lightGray.cgColor
         selectCardView.layer.borderWidth = 1
         
@@ -119,9 +118,13 @@ class CheckoutVC: UIViewController {
         guard (UserManager.instance.user?.stripeId) != nil else { return }
         
         let config = STPPaymentConfiguration.shared
-        paymentContext = STPPaymentContext(customerContext: Wallet.instance.customerContext, configuration: config, theme: .defaultTheme)
+        paymentContext = STPPaymentContext(customerContext: Wallet.instance.customerContext,
+                                           configuration: config,
+                                           theme: .defaultTheme)
+        
         paymentContext.hostViewController = self
         paymentContext.delegate = self
+        
     }
     
     
@@ -134,7 +137,20 @@ class CheckoutVC: UIViewController {
     }
     
     @IBAction func payButtonClicked(_ sender: Any) {
+        let total = vacation.price + FeesCalculator.calculateFeesForCard(subtotal: vacation.price)
         
+        let confirmPayment = UIAlertController(title: "Confirm Payment", message: "Confirm Payment for \(total.formatToDecimalCurrencyString())", preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { action in
+            self.paymentContext.requestPayment()
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        confirmPayment.addAction(confirmAction)
+        confirmPayment.addAction(cancel)
+        
+        present(confirmPayment, animated: true)
     }
     
 }
@@ -148,25 +164,70 @@ extension CheckoutVC: STPPaymentContextDelegate {
     func paymentContextDidChange(_ paymentContext: STPPaymentContext) {
         
         // Triggers when the content of the payment context changes, like when the user selects a new payment method or enters shipping information.
+        if let card = paymentContext.selectedPaymentOption {
+            cardEndingIn.text = card.label
+        } else {
+            cardEndingIn.text = "No card selected"
+        }
         
         
         
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didFailToLoadWithError error: Error) {
-        
+        simpleAlert(msg: "Sorry, but we are not able to load you credit cards at this time.")
     }
     
     // MARK: Create Payment Intent
     
     func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPPaymentStatusBlock) {
-        
         // Request Stripe payment intent, and return client secret.
-              // The client secret can be used to complete a payment from your frontend.
-              // Once the client secret is obtained, create paymentIntentParams
-              // Confirm the PaymentIntent
-              // STPPaymentHandler.shared().confirmPayment(paymentIntentParams, with: paymentContext)
+
         
+        guard let stripeId = UserManager.instance.user?.stripeId else { return }
+        
+        let idempotency = UUID().uuidString.replacingOccurrences(of: "-", with: "")
+        
+        let fees = FeesCalculator.calculateFeesForCard(subtotal: vacation.price)
+        let total = vacation.price + fees
+        
+        let data: [String: Any] = [
+            "total": total,
+            "idempotency": idempotency,
+            "customer_id": stripeId
+        ]
+        
+        Functions.functions().httpsCallable("createPaymentIntent").call(data) { (result, error) in
+            
+            if let error = error {
+                debugPrint(error)
+                self.simpleAlert(msg: "Sorry, but we are not able to complete your payment.")
+                return
+            }
+            
+            guard let clientSecret = result?.data as? String else {
+                self.simpleAlert(msg: "Sorry, but we are not able to complete your payment.")
+                return
+            }
+            
+            // Once the client secret is obtained, create paymentIntentParams
+            let paymentIntentParams = STPPaymentIntentParams(clientSecret: clientSecret)
+            paymentIntentParams.paymentMethodId = paymentResult.paymentMethod?.stripeId
+            
+            // Confirm the PaymentIntent
+            STPPaymentHandler.shared().confirmPayment(paymentIntentParams, with: paymentContext) { (status, paymentIntent, error) in
+                
+                switch status {
+                
+                case .succeeded:
+                    completion(.success, nil)
+                case .failed:
+                    completion(.error, nil)
+                case .canceled:
+                    completion(.userCancellation, nil)
+                }
+            }
+        }
         
         
     }
@@ -175,7 +236,29 @@ extension CheckoutVC: STPPaymentContextDelegate {
     func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
         
         // Take action based on return status: error, success, userCancellation
-
+        
+            
+            switch status {
+            
+            case .success:
+                
+                let successAlert = UIAlertController(title: "Payment Success!", message: "\nYou will receive an email with all the travel details soon! \n\n Bon Voyage!", preferredStyle: .alert)
+                
+                let ok = UIAlertAction(title: "Ok", style: .default) { (action) in
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
+                
+                successAlert.addAction(ok)
+                present(successAlert, animated: true)
+                
+            case .error:
+                simpleAlert(msg: "Sorry, something went wrong during checkout. You were not charged and can try again.")
+                
+            case .userCancellation:
+                return
+        
+        }
+        
     }
     
     

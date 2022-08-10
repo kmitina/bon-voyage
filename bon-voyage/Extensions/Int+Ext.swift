@@ -19,4 +19,13 @@ extension Int {
         return formatter.string(from: nsnum) ?? "$$$"
         
     }
+    
+    func formatToDecimalCurrencyString() -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.maximumFractionDigits = 2
+        
+        let nsnum = NSNumber(integerLiteral: self / 100)
+        return formatter.string(from: nsnum) ?? "$$$"
+    }
 }
